@@ -56,7 +56,7 @@ function crearObstaculo() {
       clearInterval(colisionCheck);
     }
 
-    // Sumar punto si pasa la piedra y snoopy estaba saltando
+    // Sumar punto si pasa la piedra saltando
     if (!yaSumoPunto && obsRect.right < snoopyRect.left && saltando) {
       score++;
       puntos.innerText = score;
