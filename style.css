@@ -109,7 +109,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(255, 58, 122, 0.5);
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 9999;  /* Que esté siempre arriba */
+  z-index: 9999;  
 }
 
 #btnJugar:hover {
@@ -120,7 +120,7 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 32px; /* lo hice más grande */
+  font-size: 32px; 
   font-weight: bold;
   color: #ffd93d; /* amarillo dorado */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* sombra suave para destacar */
