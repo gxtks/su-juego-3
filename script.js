@@ -100,7 +100,7 @@ function terminarJuego() {
   mensajeFinal.innerHTML = `
     <div class="linea">Hecho con cariño por ti 🐾</div>
     <div class="linea">Feliz cumpleaños ❤️</div>
-    <div class="linea">- Mar</div>
+    <div class="linea">-Mar</div>
   `;
 
   document.body.appendChild(mensajeFinal);
