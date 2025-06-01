@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>proyecto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="btnJugar">Jugar</button> <!-- Aquí agregas el botón -->
+
+  <div class="juego">
+    <div class="fondo"></div>
+    <img src="img/snoopy-unscreen.gif" class="snoopy" id="snoopy" />
+    <div class="piso"></div>
+    <div class="puntos" id="puntos">0</div>
+  </div>
+
+  <!-- 🎵 AUDIO DE FONDO -->
+  <audio id="musicaFondo" loop>
+    <source src="audio/loffiloop.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- AUDIO DE SALTO -->
+  <audio id="audioSalto" src="audio/pixel-jump-319167.mp3" preload="auto"></audio>
+
+  <!-- AUDIO DE CHOQUE (PIEDRA) -->
+  <audio id="audioPiedra" src="audio/BONK Sound Effect - Cheems Meme Sound Effect.mp3" preload="auto"></audio>
+
+  <!-- BOTÓN PARA CONTROLAR LA MÚSICA -->
+  <button id="btnMusica" class="boton-musica">🎵 Música</button>
+
+  <script src="script.js"></script>
+  <script>
+    // Código para el botón de música
+    const btnMusica = document.getElementById('btnMusica');
+    const musicaFondo = document.getElementById('musicaFondo');
+
+    btnMusica.addEventListener('click', () => {
+      if (musicaFondo.paused) {
+        musicaFondo.play();
+        btnMusica.textContent = '🔈 Pausar';
+      } else {
+        musicaFondo.pause();
+        btnMusica.textContent = '🎵 Música';
+      }
+    });
+  </script>
+</body>
+</html>

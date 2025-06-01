@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url("img/8278296.gif") no-repeat center center;
+  font-family: 'Arial', sans-serif;
+  background-size: 100% 100%;
+}
+
+.juego {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fondo {
+  background-image: url("dxxdx");
+  background-repeat: repeat-x;
+  background-size: cover;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  animation: moverFondo 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moverPiso {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -1000px;
+  }
+}
+
+.piso {
+  background-image: url("img/pasto\ pasto\ pasto.png");     /* archivo de la imagen */
+  background-repeat: repeat-x;
+  animation: moverPiso 3s linear infinite;    /* hace que se mueva */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;                               /* Ajusta si tu imagen es más alta o baja */
+  z-index: 1;
+}
+
+
+.snoopy {
+  position: absolute;
+  bottom: 40px; /* ajusta esto si el piso es más alto */
+  left: 50px;
+  width: 210px; /* subir o bajar para cambiar el tamaño de snopy */
+  height: auto; /* mantiene la proporción del gif */
+  z-index: 2;
+  transition: bottom 0.4s ease;
+  
+}
+
+.piso {
+  background-image: url("img/pasto\ pasto\ pasto.png");
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0px; /* antes era 0; */
+  width: 100%;
+  height: 80px; /* antes era 80px */
+  z-index: 1;
+}
+
+.obstaculo {
+  background-image: url("img/roca_roca-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 70px;
+  width: 60px;
+  height: 60px;
+  left: 100vw;
+  animation: moverObstaculo 3s linear forwards;
+  z-index: 2;
+}
+
+@keyframes moverObstaculo {
+  0% { left: 100vw; }
+  100% { left: -60px; }
+}
+
+.puntos {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #ff3399;
+  z-index: 10;
+}
+
+/* ESTO ES EL BOTÓN ROSADO CENTRADO */
+#btnJugar {
+  position: fixed;      /* Para que quede sobre todo */
+  top: 50%;             /* Centro vertical */
+  left: 50%;            /* Centro horizontal */
+  transform: translate(-50%, -50%);
+  padding: 15px 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff6ec4, #ff3a7a);
+  border: 3px solid #ff3a7a;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 58, 122, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;  /* Que esté siempre arriba */
+}
+
+#btnJugar:hover {
+  background: linear-gradient(135deg, #ff3a7a, #ff6ec4);
+  box-shadow: 0 6px 20px rgba(255, 58, 122, 0.7);
+}
+.puntos {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px; /* lo hice más grande */
+  font-weight: bold;
+  color: #ffd93d; /* amarillo dorado */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* sombra suave para destacar */
+  background: rgba(0, 0, 0, 0.2); /* fondo semitransparente para mejor visibilidad */
+  padding: 8px 16px;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.mensaje-perdida {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: gold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+  border-radius: 12px;
+  z-index: 9999;
+  text-align: center;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translate(-50%, -60%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+.boton-musica {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  border: 2px solid #2e7d32;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(56, 142, 60, 0.6);
+  z-index: 9999;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-musica:hover {
+  background: linear-gradient(135deg, #388e3c, #4caf50);
+  box-shadow: 0 6px 15px rgba(56, 142, 60, 0.8);
+}
+.mensaje-final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: white;
+  font-size: 2.5rem;
+  padding: 30px 40px;
+  text-align: center;
+  border-radius: 15px;
+  z-index: 9999;
+  white-space: pre-line;
+  box-shadow: 0 0 20px 5px #fff;
+}
+.mensaje-final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.3);
+  animation: aparecer 1s ease-in-out;
+}
+
+.mensaje-final .linea {
+  margin: 10px 0;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
